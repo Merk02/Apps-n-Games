@@ -33,11 +33,19 @@ def on():
                     print('\nWell\nGoodbye\n')
                     quit()
     if oi==1:
-        board()
+        print('\n 7 | 8 | 9 ')
+        print('---+---+---')
+        print(' 4 | 5 | 6 ')
+        print('---+---+---')
+        print(' 1 | 2 | 3 \n')
         com()
     elif oi==2:
-        board()
-        movex()
+        print('\n 7 | 8 | 9 ')
+        print('---+---+---')
+        print(' 4 | 5 | 6 ')
+        print('---+---+---')
+        print(' 1 | 2 | 3 \n')
+        turnhuman()
     else:
         print('\nPlease enter a digit [1 or 2]\n')
         on()
@@ -45,7 +53,6 @@ def on():
 
 def restart():
     b[1],b[2],b[3],b[4],b[5],b[6],b[7],b[8],b[9]=' ',' ',' ',' ',' ',' ',' ',' ',' '
-    board()
     on()
     
 
@@ -97,20 +104,6 @@ def comx():
         end()
     else:
         humano()
-
-def turnx():
-    tx=randint(1,2)
-    if tx==1:
-        como()
-    else:
-        humanx()
-
-def turno():
-    to=randint(1,2)
-    if to==1:
-        comx()
-    else:
-        humano()
     
 def como():
     co=randint(1,9)
@@ -128,6 +121,20 @@ def como():
         end()
     else:
         humanx()
+
+def turnx():
+    tx=randint(1,2)
+    if tx==1:
+        como()
+    else:
+        humanx()
+
+def turno():
+    to=randint(1,2)
+    if to==1:
+        comx()
+    else:
+        humano()
 
 def humanx():
     try:
@@ -150,7 +157,6 @@ def humanx():
     if hx in [1,2,3,4,5,6,7,8,9]:
         if b[hx]==' ':
             b[hx]='X'
-            board()
         elif b[hx]!=' ':
             print('\nThis slot is occupied.\nChoose another slot\n')
             humanx()
@@ -217,6 +223,33 @@ def humano():
 
 # < SECTION HUMAN VS HUMAN ---------------------------------------------------
     
+def turnhuman():
+    choice=input('\nSelect X or O: ')
+    if choice=='x' or choice=='X':
+        print('\nPlayer 1 is X\nPlayer 2 is O\n')
+        choicex=randint(1,2)
+        if choicex==1:
+            print('X begins\n')
+            movex()
+        else:
+            print('O begins\n')
+            moveo()
+    elif choice=='o' or choice=='O':
+        print('\nPlayer 1 is O\nPlayer 2 is X\n')
+        choiceo=randint(1,2)
+        if choiceo==1:
+            print('O begins\n')
+            moveo()
+        else:
+            print('X begins\n')
+            movex()        
+    elif choice==int:
+        print('\nPlease enter X or O\n')
+        turnhuman()
+    else:
+        print(f'\n\'{xo}\' is an invalid choice.\nPlease enter X or O\n')
+        turnhuman()
+
 def movex():
     try:
         x=int(input('Input X: '))
