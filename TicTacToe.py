@@ -41,22 +41,7 @@ def on():
     else:
         print('\nPlease enter a digit [1 or 2]\n')
         on()
-
-#def start():
-#    s=input('\nBegin new game? (y/n)\n')
-#    s=s.lower()
-#    if s==int:
- #       print('\nPlease enter y or n\n')
-  #      start()
-   # if s=='y':
-    #    board()
-     #   movex()
- #   elif s!='y' and s!='n':
-  #      print('\nPlease enter y or n\n')
-   #     start()
-    #elif s=='n':
-     #   print('\nOk\nbye bye\n')
-      #  quit()
+        
 
 def restart():
     b[1],b[2],b[3],b[4],b[5],b[6],b[7],b[8],b[9]=' ',' ',' ',' ',' ',' ',' ',' ',' '
