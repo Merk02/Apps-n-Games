@@ -77,7 +77,9 @@ def end():
 
 def com():
     xo=input('\nSelect X or O: ')
-    if xo=='x' or xo=='X':
+    if xo=='exit':
+        quit()
+    elif xo=='x' or xo=='X':
         turnx()
     elif xo=='o' or xo=='O':
         turno()
@@ -92,12 +94,13 @@ def comx():
     cx=randint(1,9)
     if b[cx]==' ':
         b[cx]='X'
+        print('\nComputer moves')
     elif b[cx]!=' ':
         comx()
     board()
     if b[1]==b[2]==b[3]=='X' or b[4]==b[5]==b[6]=='X' or b[7]==b[8]==b[9]=='X' or b[1]==b[4]==b[7]=='X' or b[2]==b[5]==b[8]=='X' or b[3]==b[6]==b[9]=='X' or b[1]==b[5]==b[9]=='X' or b[3]==b[5]==b[7]=='X':
         board()
-        print('\nGame over.\ncomputer won\n')
+        print('\nGame over.\nComputer won\n')
         end()
     elif ' ' not in b.values():
         print('\nNo one won.\nTie\n')
@@ -109,6 +112,7 @@ def como():
     co=randint(1,9)
     if b[co]==' ':
         b[co]='O'
+        print('\nComputer moves')
     elif b[co]!=' ':
         como()
     board()
@@ -139,6 +143,8 @@ def turno():
 def humanx():
     try:
         hx=int(input('Input X: '))
+        if hx==0:
+            quit()
     except ValueError:
         print('\n3 attempts\nPlease enter a digit [1-9]\n')
         try:
@@ -180,6 +186,8 @@ def humanx():
 def humano():
     try:
         ho=int(input('Input O: '))
+        if ho==0:
+            quit()
     except ValueError:
         print('\n3 attempts\nPlease enter a digit [1-9]\n')
         try:
@@ -225,7 +233,9 @@ def humano():
     
 def turnhuman():
     choice=input('\nSelect X or O: ')
-    if choice=='x' or choice=='X':
+    if choice=='exit':
+        quit()
+    elif choice=='x' or choice=='X':
         print('\nPlayer 1 is X\nPlayer 2 is O\n')
         choicex=randint(1,2)
         if choicex==1:
@@ -253,6 +263,8 @@ def turnhuman():
 def movex():
     try:
         x=int(input('Input X: '))
+        if x==0:
+            quit()
     except ValueError:
         print('\n3 attempts\nPlease enter a digit [1-9]\n')
         try:
@@ -294,6 +306,8 @@ def movex():
 def moveo():
     try:
         o=int(input('Input O: '))
+        if o==0:
+            quit()
     except ValueError:
         print('\n3 attempts\nPlease enter a digit [1-9]\n')
         try:
